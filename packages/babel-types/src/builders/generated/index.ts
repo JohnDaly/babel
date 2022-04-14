@@ -727,9 +727,9 @@ export function numberTypeAnnotation(): t.NumberTypeAnnotation {
 }
 export function objectTypeAnnotation(
   properties: Array<t.ObjectTypeProperty | t.ObjectTypeSpreadProperty>,
-  indexers?: Array<t.ObjectTypeIndexer> | null,
-  callProperties?: Array<t.ObjectTypeCallProperty> | null,
-  internalSlots?: Array<t.ObjectTypeInternalSlot> | null,
+  indexers?: Array<t.ObjectTypeIndexer>,
+  callProperties?: Array<t.ObjectTypeCallProperty>,
+  internalSlots?: Array<t.ObjectTypeInternalSlot>,
   exact?: boolean,
 ): t.ObjectTypeAnnotation {
   return builder.apply("ObjectTypeAnnotation", arguments);

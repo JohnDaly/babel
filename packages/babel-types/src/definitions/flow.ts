@@ -272,9 +272,15 @@ defineType("ObjectTypeAnnotation", {
     properties: validate(
       arrayOfType(["ObjectTypeProperty", "ObjectTypeSpreadProperty"]),
     ),
-    indexers: validateOptional(arrayOfType("ObjectTypeIndexer")),
-    callProperties: validateOptional(arrayOfType("ObjectTypeCallProperty")),
-    internalSlots: validateOptional(arrayOfType("ObjectTypeInternalSlot")),
+    indexers: { validate: arrayOfType("ObjectTypeIndexer"), default: [] },
+    callProperties: {
+      validate: arrayOfType("ObjectTypeCallProperty"),
+      default: [],
+    },
+    internalSlots: {
+      validate: arrayOfType("ObjectTypeInternalSlot"),
+      default: [],
+    },
     exact: {
       validate: assertValueType("boolean"),
       default: false,
